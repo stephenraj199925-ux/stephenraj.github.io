@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephen Raj R S · Performance Marketing Portfolio</title>
+  
+  <!-- Fonts matching the editorial design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --surface: #14171f;
+      --surface-card: #191d27;
+      --border: #262b3a;
+      --border-accent: #3b4256;
+      --text-primary: #f1f3f7;
+      --text-secondary: #9aa1b2;
+      --text-muted: #656c7d;
+      --accent-gold: #e5b869;
+      --accent-blue: #4f8cff;
+      --accent-teal: #2dd4bf;
+      --accent-badge-bg: rgba(229, 184, 105, 0.12);
+      --accent-blue-bg: rgba(79, 140, 255, 0.12);
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fixed Clean Minimal Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(12, 14, 18, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .nav-brand span {
+      color: var(--accent-gold);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 9rem 0 5rem;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: var(--accent-badge-bg);
+      border: 1px solid rgba(229, 184, 105, 0.3);
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 820px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Metric Counters Banner */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-gold);
+    }
+
+    .stat-number {
+      font-family: var(--font-mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-number.gold { color: var(--accent-gold); }
+    .stat-number.blue { color: var(--accent-blue); }
+    .stat-number.teal { color: var(--accent-teal); }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+
+    /* Section Headings */
+    section {
+      padding: 5.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    .section-header h2 em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+    }
+
+    .about-bio p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-bio strong {
+      color: var(--text-primary);
+    }
+
+    .about-meta {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .about-meta a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .pillars-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .pillar-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .pillar-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Experience Timeline */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .exp-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .exp-company {
+      font-size: 0.95rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .exp-dates {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--surface-card);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .exp-bullets {
+      margin-top: 1.2rem;
+      padding-left: 1.2rem;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 0.55rem;
+    }
+
+    .exp-bullets strong {
+      color: var(--text-primary);
+    }
+
+    /* Interactive Accordion Case Studies */
+    .case-studies {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .case-card.active {
+      border-color: var(--accent-gold);
+    }
+
+    .case-header {
+      padding: 1.8rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      user-select: none;
+    }
+
+    .case-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .case-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .case-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.35rem;
+    }
+
+    .case-kpis {
+      display: flex;
+      gap: 1.5rem;
+      text-align: right;
+    }
+
+    .case-kpi-item span:first-child {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+
+    .case-kpi-item span:last-child {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .chevron {
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .case-card.active .chevron {
+      transform: rotate(180deg);
+    }
+
+    .case-body {
+      display: none;
+      padding: 0 2rem 2.2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface-card);
+    }
+
+    .case-card.active .case-body {
+      display: block;
+    }
+
+    .case-section-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      letter-spacing: 0.08em;
+      margin: 1.8rem 0 0.6rem;
+      font-weight: 700;
+    }
+
+    .case-body p {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .case-body ul {
+      padding-left: 1.2rem;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+
+    .case-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .case-body strong {
+      color: var(--text-primary);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .skill-block-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6rem;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill-pill {
+      font-size: 0.82rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text-secondary);
+    }
+
+    /* Certifications & Education */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .cert-item {
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      margin-top: 0.2rem;
+    }
+
+    /* Contact Section */
+    .contact-banner {
+      background: linear-gradient(135deg, var(--surface) 0%, #171b26 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+    }
+
+    .contact-banner h2 {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .contact-banner h2 em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .contact-banner p {
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: #0c0e12;
+    }
+
+    .btn-primary:hover {
+      background: #f0c57c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--surface-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-accent);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 868px) {
+      nav ul { display: none; }
+      .about-grid, .grid-2col { grid-template-columns: 1fr; }
+      .case-header { flex-direction: column; align-items: flex-start; }
+      .case-kpis { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-brand">Stephen Raj <span>· Performance Portfolio</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#skills">Skills & Tools</a></li>
+      <li><a href="#credentials">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-eyebrow">Performance Marketing & Marketplace Growth</div>
+      <h1>Scalable Paid Acquisition.<br><em>Measurable Commercial ROAS.</em></h1>
+      <p class="hero-subtitle">
+        Performance Marketing Lead with 4+ years of hands-on mastery deploying high-budget media programs across Meta Ads, Google Ads, Amazon, and Flipkart. Turning ad spend into sustainable, compounding bottom-line growth.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">Meta Ads Manager</span>
+        <span class="tag">Google Performance Max</span>
+        <span class="tag">Amazon Advertising</span>
+        <span class="tag">Flipkart Ads</span>
+        <span class="tag">ROAS Scaling</span>
+        <span class="tag">Creative Iteration Loops</span>
+        <span class="tag">Inventory-Aware Media Buying</span>
+        <span class="tag">D2C E-commerce</span>
+      </div>
+
+      <!-- Live KPI Matrix -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number gold">₹1 Cr+</span>
+          <div class="stat-label">Monthly Meta Budget Handled</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number teal">₹8.7 Cr</span>
+          <div class="stat-label">Peak Monthly Revenue Scaled</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number blue">3.5x → 4.5x</span>
+          <div class="stat-label">Meta ROAS Improvement</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">22% → 15%</span>
+          <div class="stat-label">Amazon ACOS Efficiency</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 01 About Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>About <em>Me</em></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>
+            I am a performance marketing professional with <strong>4+ years of deep operational experience</strong> orchestrating large-scale paid media campaigns and marketplace acquisition for fast-growing D2C brands.
+          </p>
+          <p>
+            At <strong>The Indus Valley</strong>, I manage advertising budgets of up to <strong>₹1 Crore/month</strong> on Meta, directly contributing to scaling monthly brand revenue from <strong>₹6.5 Cr to ₹8.7 Cr</strong> and generating <strong>₹4 Cr+ in direct Meta revenue</strong> and <strong>₹9.85 Cr in quarterly Google Ads revenue</strong>.
+          </p>
+          <p>
+            What sets my approach apart is the union of <strong>quantitative media buying</strong> with <strong>operational reality</strong>. I don't treat ads in a silo; I align campaign scheduling with real-time stock levels, production flow, and unit economics to ensure every rupee spent converts without out-of-stock drop-offs.
+          </p>
+
+          <div class="about-meta">
+            stephenraj199925@gmail.com &nbsp;·&nbsp; +91 70105 48425 &nbsp;·&nbsp; Chennai, India &nbsp;·&nbsp; 
+            <a href="https://linkedin.com/in/stephenraj-a35b17201" target="_blank">LinkedIn Profile ↗</a>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🎯</div>
+            <div>
+              <div class="pillar-title">Full-Funnel Meta & Google</div>
+              <div class="pillar-desc">Prospecting, ASC+, retargeting, Search, Display, and Performance Max architecture with 4.5x ROAS targets.</div>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🛒</div>
+            <div>
+              <div class="pillar-title">Marketplace Mastery</div>
+              <div class="pillar-desc">Amazon Sponsored Ads & Flipkart Marketing, cutting ACOS to 15% while scaling volumes by 45%.</div>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <div>
+              <div class="pillar-title">Creative A/B Testing Loops</div>
+              <div class="pillar-desc">Systematic hook, angle, and CTA iteration lifting click-through rates from 0.97% to 1.07%.</div>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">📦</div>
+            <div>
+              <div class="pillar-title">Inventory & Stock-Aware Buying</div>
+              <div class="pillar-desc">Connecting campaign run-rates with live SKU availability to avoid stock-outs and protect margin health.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Work Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Work <em>Experience</em></h2>
+      </div>
+
+      <div class="exp-list">
+        <!-- Indus Valley -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Digital Marketing Senior Associate</div>
+              <div class="exp-company">The Indus Valley · D2C E-commerce</div>
+            </div>
+            <div class="exp-dates">May 2024 – Present · Chennai</div>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Manage and deploy full-funnel <strong>Meta Ads budgets up to ₹1 Crore/month</strong>, contributing to over <strong>₹4 Cr+</strong> in Meta-attributed revenue within 13 months.</li>
+            <li>Instrumental in scaling brand revenue from <strong>₹6.5 Cr/month to a peak of ₹8.7 Cr/month</strong> through creative diversification, custom audience scaling, and automated bid strategies.</li>
+            <li>Direct Google Ads campaigns across Search, Shopping, and PMax, delivering <strong>₹9.85 Cr in Q2 website sales</strong>.</li>
+            <li>Helped steer high-velocity festive marketing: <strong>₹2.83 Cr in Navaratri revenue</strong> and <strong>₹1.43 Cr during Independence Day</strong>.</li>
+            <li>Improved blended Meta CTR from <strong>0.97% to 1.07%</strong> and scaled key campaign ROAS from <strong>3.5x to 4.5x</strong>.</li>
+            <li>Orchestrated technical SEO and content updates, driving <strong>62% traffic growth</strong> and <strong>59% social follower lift</strong>, yielding ₹1.45L/month in recurring organic revenue.</li>
+          </ul>
+        </div>
+
+        <!-- Harkin Global -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Digital Marketing Associate</div>
+              <div class="exp-company">Harkin Global Solutions Pvt. Ltd. · Agency & Marketplace Growth</div>
+            </div>
+            <div class="exp-dates">Sep 2022 – Apr 2024 · Chennai</div>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Managed end-to-end paid advertising on <strong>Amazon and Flipkart</strong>, generating a <strong>45% increase in sales volume</strong> and a <strong>30% improvement in ROI</strong>.</li>
+            <li>Administered Amazon advertising budgets of up to <strong>₹40L/month</strong>, successfully cutting ACOS from <strong>22% down to 15%</strong> through negative keyword harvesting and dayparting.</li>
+            <li>Supervised Flipkart ad budgets of approximately <strong>₹4L/month</strong>, tracking product-level ranking, buy-box ownership, and catalog conversion velocity.</li>
+            <li>Managed multi-channel Google Ads campaigns (Search, Display, PMax) to capture high-intent buyers across category terms.</li>
+          </ul>
+        </div>
+
+        <!-- AMPS -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Marketing & SEO Intern</div>
+              <div class="exp-company">AMPS Pvt. Ltd.</div>
+            </div>
+            <div class="exp-dates">2022 · Chennai</div>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Executed keyword research, competitor link profiling, on-site meta tag audits, and organic ranking optimization across search assets.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Case Studies -->
+    <section id="case-studies">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Deep-Dive <em>Case Studies</em></h2>
+      </div>
+
+      <div class="case-studies">
+        
+        <!-- Case Study 1 -->
+        <div class="case-card active" id="cs1">
+          <div class="case-header" onclick="toggleCase('cs1')">
+            <div>
+              <div class="case-meta">Case Study 01 · D2C E-Commerce · The Indus Valley</div>
+              <div class="case-title">Scaling Meta Spend to ₹1 Cr/Month While Lifting ROAS to 4.5x</div>
+              <div class="case-subtitle">Audience Segmentation, Advantage+ Shopping Campaigns & Creative Testing Matrix</div>
+            </div>
+            <div class="case-kpis">
+              <div class="case-kpi-item">
+                <span class="gold">₹8.7 Cr</span>
+                <span>Peak Revenue</span>
+              </div>
+              <div class="case-kpi-item">
+                <span class="teal">4.5x</span>
+                <span>Scaled ROAS</span>
+              </div>
+            </div>
+            <div class="chevron">▼</div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-section-title">Context & Challenge</div>
+            <p>
+              The Indus Valley needed to break through a revenue plateau of ₹6.5 Cr/month without running into audience saturation or escalating Customer Acquisition Costs (CAC). Ad fatigue was lowering CTRs, and higher spend was threatening to compress ROAS.
+            </p>
+
+            <div class="case-section-title">Execution Framework</div>
+            <ul>
+              <li><strong>Creative Sandbox Structure:</strong> Separated creative concept validation into a testing environment with 10+ weekly iterations (problem-aware hooks, cookware comparisons, vernacular demos) before promoting top-performing assets into high-budget scaling ad sets.</li>
+              <li><strong>ASC+ & Catalog Segmentation:</strong> Shifted broad conversion campaigns to Meta Advantage+ Shopping Campaigns while segmenting catalog feeds by profit margin and stock availability.</li>
+              <li><strong>Festival Blitzkrieg:</strong> Deployed high-urgency promotional structures during the Navaratri and Independence Day sales, generating <strong>₹2.83 Cr and ₹1.43 Cr</strong> in revenue respectively.</li>
+            </ul>
+
+            <div class="case-section-title">Business Impact</div>
+            <ul>
+              <li>Meta-attributed revenue exceeded <strong>₹4 Crore+ over a 13-month cycle</strong>.</li>
+              <li>Overall monthly brand revenue reached an all-time peak of <strong>₹8.7 Crore/month</strong>.</li>
+              <li>Meta Click-Through Rates (CTR) grew from <strong>0.97% to 1.07%</strong>, lowering CPC and preserving campaign efficiency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-card" id="cs2">
+          <div class="case-header" onclick="toggleCase('cs2')">
+            <div>
+              <div class="case-meta">Case Study 02 · Marketplace PPC · Harkin Global Solutions</div>
+              <div class="case-title">Optimizing Amazon ACOS from 22% to 15% on ₹40L Monthly Ad Spend</div>
+              <div class="case-subtitle">Sponsored Products, Bid Algorithmic Optimization & Negative Sculpting</div>
+            </div>
+            <div class="case-kpis">
+              <div class="case-kpi-item">
+                <span class="blue">15%</span>
+                <span>Target ACOS</span>
+              </div>
+              <div class="case-kpi-item">
+                <span class="gold">+45%</span>
+                <span>Sales Surge</span>
+              </div>
+            </div>
+            <div class="chevron">▼</div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-section-title">Context & Challenge</div>
+            <p>
+              At Harkin Global, high monthly ad spend across Amazon categories was suffering from broad keyword bleed, generic search term wastage, and aggressive competitor bidding, leaving ACOS hovering at an unsustainable 22%.
+            </p>
+
+            <div class="case-section-title">Execution Framework</div>
+            <ul>
+              <li><strong>Negative Keyword Sculpting:</strong> Harvested high-converting search queries from auto-campaigns and isolated them into exact match manual campaigns, while systematically adding negative exact matches to remove wasted spend.</li>
+              <li><strong>Dayparting & Placement Bid Multipliers:</strong> Analyzed hourly conversion velocity to concentrate peak spend during prime checkout hours (7:00 PM – 11:30 PM), reducing out-of-budget dropouts before high-intent windows.</li>
+              <li><strong>Flipkart Parallel Strategy:</strong> Replicated keyword harvesting onto Flipkart Ads with dedicated ₹4L/month budgets, maintaining strict product-level ROAS oversight.</li>
+            </ul>
+
+            <div class="case-section-title">Business Impact</div>
+            <ul>
+              <li>Slashing Amazon ACOS from <strong>22% down to 15%</strong> across all active product categories.</li>
+              <li>Delivered a net <strong>45% surge in total marketplace sales</strong> with a <strong>30% improvement in ROI</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 Skills & Tools -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Skills & <em>Tech Stack</em></h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-block-title">Performance Channels</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Meta Ads Manager</span>
+            <span class="skill-pill">Google Ads</span>
+            <span class="skill-pill">Amazon Ads</span>
+            <span class="skill-pill">Flipkart Ads</span>
+            <span class="skill-pill">Performance Max</span>
+            <span class="skill-pill">YouTube Video Ads</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">Strategy & Operations</div>
+          <div class="skill-pills">
+            <span class="skill-pill">ROAS Optimization</span>
+            <span class="skill-pill">Budget Allocation</span>
+            <span class="skill-pill">Creative Testing</span>
+            <span class="skill-pill">Inventory-Aware Bidding</span>
+            <span class="skill-pill">Full-Funnel CRO</span>
+            <span class="skill-pill">ACOS Reduction</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">Analytics & Attribution</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Google Analytics (GA4)</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Adobe Analytics</span>
+            <span class="skill-pill">Google Search Console</span>
+            <span class="skill-pill">Helium 10</span>
+            <span class="skill-pill">Similarweb</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">E-commerce & Systems</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Shopify Growth</span>
+            <span class="skill-pill">Technical SEO</span>
+            <span class="skill-pill">Keyword Planner</span>
+            <span class="skill-pill">Advanced MS Excel</span>
+            <span class="skill-pill">Google Trends</span>
+            <span class="skill-pill">WordPress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Education & Certifications -->
+    <section id="credentials">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Education & <em>Certifications</em></h2>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <h3 style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 1rem;">Certifications</h3>
+          <div class="cert-item">
+            <div class="cert-name">Meta Blueprint for Paid Ads</div>
+            <div class="cert-issuer">Meta Business Suite</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Foundations of Digital Marketing and E-commerce</div>
+            <div class="cert-issuer">Google Career Certificates</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">The Fundamentals of Digital Marketing</div>
+            <div class="cert-issuer">Google Digital Garage</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Master B2B Lead Generation (LinkedIn Ads)</div>
+            <div class="cert-issuer">Coursera</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Ad Copywriting for Paid Ads</div>
+            <div class="cert-issuer">Udemy</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Microsoft Office Specialist</div>
+            <div class="cert-issuer">Apollo</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 1rem;">Education & Background</h3>
+          <div class="cert-item" style="padding: 1.5rem;">
+            <div class="cert-name" style="font-size: 1.05rem;">Bachelor of Engineering (B.E.)</div>
+            <div class="cert-issuer" style="font-size: 0.9rem; margin-top: 0.35rem; color: var(--text-primary);">Electrical & Electronics Engineering (EEE)</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">Graduated Batch of 2021</p>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
+              Engineering analytical rigor applied to digital marketing models, algorithmic auction bidding, data transformation, and conversion rate diagnostics.
+            </p>
+          </div>
+
+          <div class="cert-item" style="padding: 1.5rem; margin-top: 1rem;">
+            <div class="cert-name" style="font-size: 1.05rem;">Personal & Communication</div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              <strong>Languages:</strong> English, Tamil (Full Professional Proficiency)
+            </p>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+              <strong>Base:</strong> Chennai, Tamil Nadu, India (Available for on-site & remote roles)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Contact -->
+    <section id="contact" style="border-bottom: none;">
+      <div class="contact-banner">
+        <h2>Let's Scale <em>Together.</em></h2>
+        <p>
+          Currently open to performance marketing leadership, paid acquisition, and growth marketing opportunities across D2C brands, marketplaces, and scaling e-commerce enterprises.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:stephenraj199925@gmail.com" class="btn btn-primary">✉ Email Stephen</a>
+          <a href="https://linkedin.com/in/stephenraj-a35b17201" target="_blank" class="btn btn-secondary">LinkedIn Profile ↗</a>
+          <a href="tel:+917010548425" class="btn btn-secondary">📞 +91 70105 48425</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      Stephen Raj R S · Performance Marketing Lead Portfolio · Built for Scale
+    </div>
+  </footer>
+
+  <!-- Accordion Case Studies Script -->
+  <script>
+    function toggleCase(id) {
+      const card = document.getElementById(id);
+      const isActive = card.classList.contains('active');
+      
+      // Close other cards for clean accordion feel
+      document.querySelectorAll('.case-card').forEach(c => c.classList.remove('active'));
+      
+      if (!isActive) {
+        card.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
